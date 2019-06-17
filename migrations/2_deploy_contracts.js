@@ -1,5 +1,7 @@
-var VyperStorage = artifacts.require("VyperStorage");
+const vyperStorage = artifacts.require('vyper_storage');
+const counter = artifacts.require('counter');
 
 module.exports = function(deployer) {
-  deployer.deploy(VyperStorage);
+  deployer.deploy(counter);
+  deployer.deploy(vyperStorage);
 };
