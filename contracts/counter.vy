@@ -1,3 +1,5 @@
+import vyper_storage_interface as VyperStorageInterface
+
 count: int128
 
 @public
