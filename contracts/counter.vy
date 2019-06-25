@@ -1,16 +1,17 @@
-import vyper_storage_interface as VyperStorageInterface
+import counter_interface as CounterInterface
 
-count: int128
+implements: CounterInterface
+
+count: public(int128)
 
 @public
-def increment():
-    self.count += 1
+def __init__():
+    self.count = 100
+
+# @public
+# def increment():
+#     self.count += 1
 
 @public
 def decrement():
     self.count -= 1
-
-@public
-@constant
-def get() -> int128:
-    return self.count
