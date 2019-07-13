@@ -1,7 +1,8 @@
-const vyperStorage = artifacts.require('vyper_storage');
-const counter = artifacts.require('counter');
+const Relayer = artifacts.require('relayer');
+const Counter = artifacts.require('counter');
 
-module.exports = function(deployer) {
-  deployer.deploy(counter);
-  deployer.deploy(vyperStorage);
+module.exports = async deployer => {
+  let counterInstance;
+  await deployer.deploy(Counter).then(instance => (counterInstance = instance));
+  await deployer.deploy(Relayer, counterInstance.address);
 };

@@ -1,17 +1,20 @@
-import counter_interface as CounterInterface
-
-implements: CounterInterface
-
-count: public(int128)
+count: int128
 
 @public
 def __init__():
     self.count = 100
 
-# @public
-# def increment():
-#     self.count += 1
+@public
+def increment() -> int128:
+    self.count += 1
+    return self.count
 
 @public
-def decrement():
+def decrement() -> int128:
     self.count -= 1
+    return self.count
+
+@public
+@constant
+def getCount() -> int128:
+  return self.count

@@ -39,13 +39,13 @@ def __init__(_name: string[64], _symbol: string[32], _decimals: uint256, _supply
     log.Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 
 
-# @public
-# @constant
-# def totalSupply() -> uint256:
-#     """
-#     @dev Total number of tokens in existence.
-#     """
-#     return self.total_supply
+@public
+@constant
+def totalSupply() -> uint256:
+    """
+    @dev Total number of tokens in existence.
+    """
+    return self.total_supply
 
 
 @public
